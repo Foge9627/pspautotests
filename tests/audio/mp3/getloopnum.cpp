@@ -111,7 +111,7 @@ extern "C" int main(int argc, char *argv[]) {
 	static const u32 values[] = { -2, -1, 0, 1, 2, 0x7FFFFFFF, 0x80000000 };
 	for (size_t i = 0; i < ARRAY_SIZE(values); ++i) {
 		char temp[64];
-		snprintf(temp, sizeof(temp), "  Value %d", values[i]);
+		snprintf(temp, sizeof(temp), "  Value %d", (int)values[i]);
 		handle = sceMp3ReserveMp3Handle(&mp3Init);
 		int result = sceMp3SetLoopNum(handle, values[i]);
 		if (handle < 0) {
